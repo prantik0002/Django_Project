@@ -1,0 +1,65 @@
+{% load static %}
+{% load exam_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/teststyle.css' %}">
+    <style>
+        #form-div
+          {
+            background-color: aquamarine;
+            width: 500px;
+            border-style: solid;
+            margin: auto;
+          }
+
+        .question
+          {
+            background-color: blue;
+            color: white;
+            font-size: 22px;
+            padding: 10px;
+            
+          }
+        .option
+          {
+            margin: 10px;
+          }
+        #submitbutton input
+          {
+            width:100px;    
+            position: relative;
+            left: 40%;
+          }
+    </style>
+    
+</head>
+<body>
+    <h1>Test Paper</h1>
+    <p>{% get_date %}</p>
+    <a href="http://localhost:8000/testapp/about/">About</a>
+    <a href="http://localhost:8000/testapp/contact/">Contact</a>
+    <a href="http://localhost:8000/testapp/">Greeting</a>
+    <div id="form-div">
+        <form action="http://localhost:8000/exam/result/" method="POST">
+            {% csrf_token %}
+            <div class="question">
+                {{question | quotes}}
+            </div>
+            <input type="hidden"  name="answer" value="{{answer}}">
+            {% for option in options %}
+            <div class="option">
+                <input type="radio" name="option" value="{{option}}"> {{option}}
+            </div>
+            {% endfor %}
+            <div id="submitbutton">
+                <input type="submit"> 
+            </div>
+        </form>
+    </div>
+</body>
+</html>

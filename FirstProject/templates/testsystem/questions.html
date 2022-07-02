@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #form-div
+          {
+            background-color: aquamarine;
+            width: 500px;
+            border-style: solid;
+            margin: auto;
+          }
+
+        .question
+          {
+            background-color: blue;
+            color: white;
+            font-size: 22px;
+            padding: 10px;
+            
+          }
+        .option
+          {
+            margin: 10px;
+          }
+        #submitbutton button
+          {
+            width:100px;    
+            position: relative;
+            left: 40%;
+          }
+    </style>
+</head>
+<body>
+    <center><h1>Questions</h1></center>
+    <div id="form-div">
+        <form action="http://localhost:8000/testsystem/result/" method="POST">
+            {% csrf_token %}
+            
+            
+            
+            <div class="question">
+                {{1.question}}
+            </div>
+            <input type="hidden"  name="answer1" value="{{1.answer}}">
+            
+            <!--<input type="hidden"  name="q{{ri}}" value="{{que.id}}">-->
+            
+            <div class="option">
+                <input type="radio" name="q1" value="{{1.option_a}}"> {{1.option_a}}
+            </div>
+
+            <div class="option">
+                <input type="radio" name="q1" value="{{1.option_b}}"> {{1.option_b}}
+            </div>
+
+            <div class="option">
+                <input type="radio" name="q1" value="{{1.option_c}}"> {{1.option_c}}
+            </div>
+
+            <div class="option">
+                <input type="radio" name="q1" value="{{1.option_d}}"> {{1.option_d}}
+            </div>
+            
+
+
+            <div class="question">
+              {{2.question}}
+          </div>
+          <input type="hidden"  name="answer2" value="{{2.answer}}">
+          
+          <!--<input type="hidden"  name="q{{ri}}" value="{{que.id}}">-->
+          
+          <div class="option">
+              <input type="radio" name="q2" value="{{2.option_a}}"> {{2.option_a}}
+          </div>
+
+          <div class="option">
+              <input type="radio" name="q2" value="{{2.option_b}}"> {{2.option_b}}
+          </div>
+
+          <div class="option">
+              <input type="radio" name="q2" value="{{2.option_c}}"> {{2.option_c}}
+          </div>
+
+          <div class="option">
+              <input type="radio" name="q2" value="{{2.option_d}}"> {{2.option_d}}
+          </div>
+
+
+
+          <div class="question">
+            {{3.question}}
+        </div>
+        <input type="hidden"  name="answer3" value="{{3.answer}}">
+        
+        <!--<input type="hidden"  name="q{{ri}}" value="{{que.id}}">-->
+        
+        <div class="option">
+            <input type="radio" name="q3" value="{{3.option_a}}"> {{3.option_a}}
+        </div>
+
+        <div class="option">
+            <input type="radio" name="q3" value="{{3.option_b}}"> {{3.option_b}}
+        </div>
+
+        <div class="option">
+            <input type="radio" name="q3" value="{{3.option_c}}"> {{3.option_c}}
+        </div>
+
+        <div class="option">
+            <input type="radio" name="q3" value="{{3.option_d}}"> {{3.option_d}}
+        </div>
+
+
+
+        <div class="question">
+          {{4.question}}
+      </div>
+      <input type="hidden"  name="answer4" value="{{4.answer}}">
+      
+      <!--<input type="hidden"  name="q{{ri}}" value="{{que.id}}">-->
+      
+      <div class="option">
+          <input type="radio" name="q4" value="{{4.option_a}}"> {{4.option_a}}
+      </div>
+
+      <div class="option">
+          <input type="radio" name="q4" value="{{4.option_b}}"> {{4.option_b}}
+      </div>
+
+      <div class="option">
+          <input type="radio" name="q4" value="{{4.option_c}}"> {{4.option_c}}
+      </div>
+
+      <div class="option">
+          <input type="radio" name="q4" value="{{4.option_d}}"> {{4.option_d}}
+      </div>
+
+
+
+      <div class="question">
+        {{5.question}}
+    </div>
+    <input type="hidden"  name="answer5" value="{{5.answer}}">
+    
+    <!--<input type="hidden"  name="q{{ri}}" value="{{que.id}}">-->
+    
+    <div class="option">
+        <input type="radio" name="q5" value="{{5.option_a}}"> {{5.option_a}}
+    </div>
+
+    <div class="option">
+        <input type="radio" name="q5" value="{{5.option_b}}"> {{5.option_b}}
+    </div>
+
+    <div class="option">
+        <input type="radio" name="q5" value="{{5.option_c}}"> {{5.option_c}}
+    </div>
+
+    <div class="option">
+        <input type="radio" name="q5" value="{{5.option_d}}"> {{5.option_d}}
+    </div>
+            
+            <div id="submitbutton">
+                <input type="submit"> 
+            </div>
+        </form>
+    
+    </div>
+    
+    <!--<div id="submitbutton">
+        <a href="http://localhost:8000/testsystem/result/"><button type="submit">Submit</button></a>
+    </div>-->
+
+
+
+
+
+
+
+
+
+
+    <!--<table>
+        {% for que in q %}
+        <tr>
+            <td>{{que.question}}</td>
+            <td>{{que.option_a}}</td>
+            <td>{{que.option_b}}</td>
+            <td>{{que.option_c}}</td>
+            <td>{{que.option_d}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+        {% for que in q %}
+    <p>{{que.question}}</p>
+    <p>{{que.option_a}}</p>
+    <p>{{que.option_b}}</p>
+    <p>{{que.option_c}}</p>
+    <p>{{que.option_d}}</p>
+    {% endfor %}
+    -->
+    
+</body>
+</html>
