@@ -14,11 +14,13 @@ def savedata(request):
         cre1=User()
         cre=exam_user()
         cre1.username=formData['username']
+        cre1.set_password(formData['password'])
+        cre1.save()
         cre.real_name=formData['name']
-        cre1.password=formData['password']
+        cre.user=cre1
         cre.save()
-    s='http://localhost:8000/testsystem/test/'
-    return HttpResponseRedirect(s)
+        request.session['username']=formData['username']
+        return  HttpResponseRedirect('http://localhost:8000/testsystem/test/')
 def userLogin(request):
     data={}
     if request.method=="POST":

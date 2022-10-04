@@ -1,10 +1,35 @@
-#form-div
+/*#form-div
 {
     background-color:blue;
+}*/
+
+
+#form-div
+{
+  background-color: aquamarine;
+  width: 500px;
+  border-style: solid;
+  margin: auto;
 }
 
-
-
+.question
+{
+  background-color: blue;
+  color: white;
+  font-size: 22px;
+  padding: 10px;
+  
+}
+.option
+{
+  margin: 10px;
+}
+#submitbutton input
+{
+  width:100px;    
+  position: relative;
+  left: 40%;
+}
 
 
 
